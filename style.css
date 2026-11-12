@@ -1,0 +1,1410 @@
+
+/* =========================================
+   PROTEGE TUS IDEAS
+   Revista digital de Propiedad Intelectual
+   ========================================= */
+
+/* 1. CONFIGURACIÓN GENERAL */
+
+:root {
+    --navy: #14283D;
+    --navy-light: #203C54;
+    --gold: #C4A46A;
+    --gold-light: #E7D7B7;
+    --cream: #F6F3EC;
+    --white: #FFFFFF;
+    --text: #293746;
+    --muted: #77818A;
+    --border: #E6E1D7;
+    --soft-blue: #EAF0F3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.section {
+    padding: 110px 9%;
+}
+
+.eyebrow {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+
+/* 2. NAVEGACIÓN */
+
+.header {
+    height: 82px;
+    padding: 0 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--cream);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo,
+.footer-logo {
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--navy);
+}
+
+.logo span,
+.footer-logo span {
+    color: var(--gold);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 27px;
+}
+
+.navigation a {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text);
+    transition: color .3s;
+}
+
+.navigation a:hover {
+    color: var(--gold);
+}
+
+.header-button {
+    border: 1px solid var(--navy);
+    padding: 11px 19px;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--navy);
+    transition: .3s;
+    border-radius: 5px;
+}
+
+.header-button:hover {
+    background: var(--navy);
+    color: white;
+    border-radius: 5px;
+}
+
+
+/* 3. PORTADA */
+
+.hero {
+    min-height: 650px;
+    padding: 90px 9%;
+    background: var(--navy);
+    color: white;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 60px;
+    overflow: hidden;
+    
+}
+
+.hero-content {
+    max-width: 580px;
+}
+
+.hero h1 {
+    font-size: clamp(52px, 7vw, 90px);
+    letter-spacing: -2px;
+    line-height: 1.05;
+    margin-bottom: 30px;
+    overflow-wrap: break-word;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero-description {
+    max-width: 440px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: #C8D2DC;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.button-primary {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 15px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: .3s;
+    border-radius: 5px;
+}
+
+.button-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-3px);
+}
+
+.button-secondary {
+    color: white;
+    font-size: 12px;
+    border-bottom: 1px solid var(--gold);
+    padding: 10px 0;
+}
+
+.hero-note {
+    margin-top: 65px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: #AEBAC6;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.note-line {
+    width: 35px;
+    height: 1px;
+    background: var(--gold);
+}
+
+
+/* ILUSTRACIÓN DE PORTADA */
+
+.hero-art {
+    height: 430px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.art-circle {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgba(196,164,106,.5);
+    border-radius: 50%;
+}
+
+.art-circle::before,
+.art-circle::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(196,164,106,.25);
+    border-radius: 50%;
+}
+
+.art-circle::before {
+    inset: 25px;
+}
+
+.art-circle::after {
+    inset: 50px;
+}
+
+.art-card {
+    width: 260px;
+    height: 320px;
+    background: #F1EDE4;
+    color: var(--navy);
+    padding: 28px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 20px 25px 60px rgba(0,0,0,.25);
+    transform: rotate(-4deg);
+}
+
+.art-number {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--muted);
+}
+
+.art-icon {
+    font-size: 95px;
+    color: var(--gold);
+    margin: 22px 0;
+    text-align: center;
+}
+
+.art-card h2 {
+    font-size: 25px;
+    line-height: 1.1;
+    margin-top: -5px;
+    margin-left: 20px;
+    position: relative;
+    top: -30px;
+}
+
+.art-caption {
+    position: absolute;
+    bottom: 25px;
+    left: 28px;
+    font-size: 8px;
+    letter-spacing: 2px;
+    color: var(--muted);
+}
+
+.floating-label {
+    position: absolute;
+    z-index: 3;
+    background: white;
+    color: var(--navy);
+    padding: 12px 16px;
+    font-size: 11px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+.floating-label span {
+    color: var(--gold);
+    margin-right: 7px;
+}
+
+.label-one {
+    top: 65px;
+    right: -5px;
+}
+
+.label-two {
+    bottom: 65px;
+    left: 0;
+}
+
+
+/* 4. ENCABEZADOS DE SECCIÓN */
+
+.section-heading {
+    max-width: 680px;
+    margin-bottom: 55px;
+}
+
+.section-heading h2 {
+    font-size: clamp(36px, 4vw, 52px);
+    color: var(--navy);
+    margin-bottom: 18px;
+}
+
+.section-heading h2 span {
+    color: var(--gold);
+}
+
+.section-heading > p {
+    color: var(--muted);
+    font-size: 14px;
+    max-width: 570px;
+}
+
+
+/* 5. INTRODUCCIÓN */
+
+.intro {
+    background: white;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 90px;
+    align-items: center;
+}
+
+.intro-text p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+.intro-text .lead {
+    font-size: 21px;
+    color: var(--navy);
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.intro-highlight {
+    background: var(--navy);
+    color: white;
+    padding: 50px;
+    min-height: 310px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.highlight-symbol {
+    font-family: 'Playfair Display', serif;
+    font-size: 65px;
+    color: var(--gold);
+    line-height: .8;
+}
+
+.intro-highlight h3 {
+    font-size: 30px;
+    max-width: 380px;
+    margin: 15px 0 25px;
+}
+
+.highlight-line {
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 15px;
+}
+
+.highlight-caption {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #BFC9D3;
+}
+
+
+/* 6. TIPOS DE PROTECCIÓN */
+
+.protection {
+    background: var(--cream);
+}
+
+.protection-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.protection-card {
+    padding: 42px;
+    background: white;
+    border: 1px solid var(--border);
+    transition: .3s;
+}
+
+.protection-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(20,40,61,.08);
+}
+
+.industrial {
+    background: var(--navy);
+    color: white;
+    border-color: var(--navy);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.card-number {
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+.card-icon {
+    font-size: 40px;
+    color: var(--gold);
+}
+
+.protection-card h3 {
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.protection-card > p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.industrial > p {
+    color: #C6D0D9;
+}
+
+.protection-card ul {
+    list-style: none;
+    margin-bottom: 35px;
+}
+
+.protection-card li {
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.industrial li {
+    border-color: rgba(255,255,255,.15);
+}
+
+.protection-card li::before {
+    content: "✦";
+    color: var(--gold);
+    margin-right: 12px;
+}
+
+.card-footer {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.info-note {
+    margin-top: 30px;
+    background: #ECE5D8;
+    padding: 23px 28px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.info-note strong {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--navy);
+    white-space: nowrap;
+}
+
+.info-note p {
+    font-size: 12px;
+    color: #5D6570;
+}
+
+
+/* 7. DERECHOS */
+
+.rights {
+    background: white;
+}
+
+.rights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+}
+
+.right-item {
+    display: flex;
+    gap: 25px;
+    padding: 25px 0;
+    border-top: 1px solid var(--border);
+}
+
+.right-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: var(--gold);
+}
+
+.right-item h3 {
+    font-size: 23px;
+    color: var(--navy);
+    margin-bottom: 12px;
+}
+
+.right-item p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+
+/* 8. INSTITUCIONES */
+
+.institutions {
+    background: var(--cream);
+}
+
+.institution-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.institution-card {
+    background: white;
+    padding: 40px;
+    border: 1px solid var(--border);
+}
+
+.institution-logo {
+    font-size: 35px;
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+}
+
+.institution-type {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.institution-card h3 {
+    font-size: 25px;
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+.institution-card p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.institution-card > a,
+.international a {
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 700;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 5px;
+}
+
+.international {
+    background: var(--navy);
+    color: white;
+    margin-top: 25px;
+    padding: 35px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.international-symbol {
+    font-size: 45px;
+}
+
+.international h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.international p {
+    color: #C8D2DC;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.international a {
+    color: var(--gold);
+}
+
+
+/* 9. CASOS REALES */
+
+.cases {
+    background: white;
+}
+
+.case-card {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    background: var(--cream);
+    margin-bottom: 35px;
+    min-height: 390px;
+}
+
+.case-card.reverse {
+    grid-template-columns: 1.2fr .8fr;
+}
+
+.case-card.reverse .case-visual {
+    order: 2;
+}
+
+.case-visual {
+    background: var(--navy);
+    color: white;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 330px;
+}
+
+.brand-visual {
+    background: #D8CCB4;
+    color: var(--navy);
+}
+
+.case-category {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--gold);
+}
+
+.case-symbol {
+    font-family: 'Playfair Display', serif;
+    font-size: 115px;
+    color: var(--gold);
+}
+
+.brand-visual .case-symbol {
+    color: var(--navy);
+}
+
+.case-visual-text {
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.case-content {
+    padding: 45px;
+}
+
+.case-content .eyebrow {
+    font-size: 9px;
+}
+
+.case-content h3 {
+    font-size: 30px;
+    color: var(--navy);
+    margin-bottom: 20px;
+}
+
+.case-content > p {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 22px;
+}
+
+.lesson {
+    background: white;
+    padding: 20px;
+    border-left: 3px solid var(--gold);
+    margin-bottom: 22px;
+}
+
+.lesson strong {
+    font-size: 12px;
+    color: var(--navy);
+}
+
+.lesson p {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+.case-content > a {
+    font-size: 11px;
+    color: var(--navy);
+    font-weight: 700;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 5px;
+}
+
+
+/* 10. RIESGOS */
+
+.risks {
+    background: var(--navy);
+    color: white;
+}
+
+.risks .section-heading h2 {
+    color: white;
+}
+
+.risks-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.risk {
+    border-top: 1px solid rgba(255,255,255,.25);
+    padding-top: 25px;
+}
+
+.risk-icon {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+}
+
+.risk h3 {
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.risk p {
+    font-size: 12px;
+    color: #BFCAD5;
+}
+
+
+/* 11. DIAGRAMA */
+
+.decision {
+    background: white;
+}
+
+.flowchart {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.flow-start {
+    background: var(--navy);
+    color: white;
+    display: inline-block;
+    padding: 25px 70px;
+    min-width: 260px;
+}
+
+.flow-start span,
+.flow-result span {
+    color: var(--gold);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.flow-start h3 {
+    font-size: 25px;
+    margin-top: 8px;
+}
+
+.flow-connector {
+    height: 35px;
+    width: 1px;
+    background: var(--gold);
+    margin: auto;
+}
+
+.flow-branches {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.flow-branch {
+    display: flex;
+    flex-direction: column;
+}
+
+.flow-question {
+    padding: 30px 20px;
+    background: var(--soft-blue);
+}
+
+.industrial-question {
+    background: #EAE5DA;
+}
+
+.flow-question span {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--gold);
+    font-weight: 700;
+}
+
+.flow-question h3 {
+    color: var(--navy);
+    font-size: 22px;
+    margin: 12px 0;
+}
+
+.flow-question p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.flow-result {
+    background: var(--cream);
+    padding: 25px;
+    border: 1px solid var(--border);
+}
+
+.flow-result h3 {
+    color: var(--navy);
+    font-size: 22px;
+    margin: 8px 0;
+}
+
+.flow-result p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.flow-bottom {
+    margin-top: 35px;
+    background: var(--navy);
+    color: white;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    text-align: left;
+}
+
+.flow-bottom > span {
+    font-size: 30px;
+    color: var(--gold);
+}
+
+.flow-bottom strong {
+    font-size: 13px;
+}
+
+.flow-bottom p {
+    font-size: 12px;
+    color: #C6D0D9;
+}
+
+.diagram-note {
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 25px;
+}
+
+
+/* 12. RECOMENDACIONES */
+
+.tips {
+    background: var(--cream);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.tip-card {
+    background: white;
+    padding: 35px;
+    border: 1px solid var(--border);
+    transition: .3s;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(20,40,61,.06);
+}
+
+.tip-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    color: var(--gold);
+}
+
+.tip-card h3 {
+    font-size: 23px;
+    color: var(--navy);
+    margin: 15px 0 25px;
+}
+
+.tip-card ul {
+    list-style: none;
+}
+
+.tip-card li {
+    font-size: 12px;
+    color: var(--muted);
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.tip-card li::before {
+    content: "✓";
+    color: var(--gold);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+
+/* 13. CONCLUSIÓN */
+
+.conclusion {
+    background: var(--navy);
+    color: white;
+    text-align: center;
+    padding: 110px 20px;
+}
+
+.conclusion h2 {
+    font-size: clamp(37px, 5vw, 60px);
+    margin: 15px 0 25px;
+}
+
+.conclusion h2 span {
+    color: var(--gold);
+}
+
+.conclusion > p {
+    max-width: 580px;
+    margin: auto;
+    font-size: 13px;
+    color: #C6D0D9;
+}
+
+.conclusion-link {
+    display: inline-block;
+    margin-top: 35px;
+    font-size: 12px;
+    color: var(--gold);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 7px;
+}
+
+
+/* 14. REFERENCIAS */
+
+.references {
+    background: white;
+}
+
+.reference-list {
+    border-top: 1px solid var(--border);
+}
+
+.reference-item {
+    display: grid;
+    grid-template-columns: 55px 1fr 30px;
+    gap: 15px;
+    align-items: center;
+    padding: 24px 10px;
+    border-bottom: 1px solid var(--border);
+    transition: .3s;
+}
+
+.reference-item:hover {
+    background: var(--cream);
+    padding-left: 20px;
+}
+
+.reference-item > span:first-child {
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+}
+
+.reference-item strong {
+    font-size: 13px;
+    color: var(--navy);
+}
+
+.reference-item p {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+.reference-arrow {
+    color: var(--gold);
+    font-size: 20px;
+}
+
+.reference-note {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 25px;
+    line-height: 1.8;
+}
+
+
+/* 15. PIE DE PÁGINA */
+
+.footer {
+    background: #0D1D2C;
+    color: white;
+    padding: 45px 9% 20px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    padding-bottom: 35px;
+}
+
+.footer-logo {
+    color: white;
+}
+
+.footer-top p {
+    font-size: 11px;
+    color: #BFCAD5;
+}
+
+.back-top {
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,.15);
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #AAB7C3;
+}
+
+
+/* 16. ADAPTACIÓN A TABLET */
+
+@media (max-width: 1000px) {
+
+    .header {
+        padding: 0 5%;
+    }
+
+    .navigation {
+        gap: 14px;
+    }
+
+    .navigation a {
+        font-size: 10px;
+    }
+
+    .section {
+        padding: 85px 6%;
+    }
+
+    .hero {
+        padding: 75px 6%;
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: 75px;
+    }
+
+    .hero-art {
+        transform: scale(.85);
+    }
+
+    .intro-grid {
+        gap: 35px;
+    }
+
+    .risks-grid {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 40px;
+    }
+}
+
+
+/* 17. ADAPTACIÓN A CELULARES */
+
+@media (max-width: 700px) {
+
+    .header {
+        height: auto;
+        padding: 22px 6%;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .navigation {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        padding: 5px 0;
+    }
+
+    .navigation a {
+        white-space: nowrap;
+        font-size: 11px;
+    }
+
+    .header-button {
+        font-size: 10px;
+        padding: 9px 12px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 75px 7%;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 12vw, 65px);
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .hero-art {
+        height: 370px;
+        transform: scale(.85);
+        margin-top: 10px;
+    }
+
+    .hero-note {
+        margin-top: 40px;
+        font-size: 8px;
+    }
+
+    .section {
+        padding: 75px 7%;
+    }
+
+    .section-heading {
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 37px;
+    }
+
+    .intro-grid,
+    .protection-grid,
+    .rights-grid,
+    .institution-grid,
+    .tips-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .intro-highlight {
+        padding: 35px;
+    }
+
+    .protection-card {
+        padding: 30px;
+    }
+
+    .info-note {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .institution-card {
+        padding: 30px;
+    }
+
+    .international {
+        align-items: flex-start;
+        padding: 25px;
+        gap: 15px;
+    }
+
+    .case-card,
+    .case-card.reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .case-card.reverse .case-visual {
+        order: 0;
+    }
+
+    .case-visual {
+        min-height: 250px;
+    }
+
+    .case-content {
+        padding: 30px;
+    }
+
+    .case-content h3 {
+        font-size: 26px;
+    }
+
+    .risks-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+    }
+
+    .risk h3 {
+        font-size: 19px;
+    }
+
+    .flow-branches {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .flow-start {
+        padding: 23px 35px;
+    }
+
+    .flow-bottom {
+        padding: 20px;
+    }
+
+    .tip-card {
+        padding: 28px;
+    }
+
+    .conclusion {
+        padding: 80px 7%;
+    }
+
+    .conclusion h2 {
+        font-size: 39px;
+    }
+
+    .reference-item {
+        grid-template-columns: 35px 1fr 20px;
+        gap: 10px;
+    }
+
+    .reference-item strong {
+        font-size: 12px;
+    }
+
+    .footer {
+        padding: 35px 7% 20px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-bottom {
+        font-size: 8px;
+    }
+
+    .nombre-paco{
+        font-size: 12px;
+    }
+}
+
+
+
+
+/* 18. PANTALLAS MUY PEQUEÑAS */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .hero-buttons {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .risks-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .art-card {
+        transform: scale(.85) rotate(-4deg);
+    }
+
+    .floating-label {
+        font-size: 9px;
+    }
+
+    .flow-start {
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+
+/* 19. IMPRESIÓN Y EXPORTACIÓN A PDF */
+
+@media print {
+
+    .header {
+        position: static;
+    }
+
+    .navigation,
+    .header-button,
+    .hero-buttons,
+    .back-top {
+        display: none;
+    }
+
+    body {
+        background: white;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+    }
+
+    .section,
+    .hero,
+    .conclusion {
+        break-inside: avoid;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+/* =========================================
+   20. BORDES REDONDEADOS
+   ========================================= */
+
+.header-button,
+.button-primary,
+.art-card,
+.floating-label,
+.intro-highlight,
+.protection-card,
+.info-note,
+.institution-card,
+.international,
+.case-card,
+.case-visual,
+.lesson,
+.flow-start,
+.flow-question,
+.flow-result,
+.flow-bottom,
+.tip-card {
+    border-radius: 5px;
+}
